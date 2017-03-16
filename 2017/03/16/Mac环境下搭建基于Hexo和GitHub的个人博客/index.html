@@ -27,7 +27,7 @@ Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署�
 
 
 Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署到各个托管平台完成发布，其">
-<meta property="og:updated_time" content="2017-03-16T13:39:17.000Z">
+<meta property="og:updated_time" content="2017-03-16T13:42:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac环境下搭建基于Hexo和GitHub的个人博客">
 <meta name="twitter:description" content="很久以前就看了别人的博客就搭建了自己的基于Hexo的个人博客，但是那个时候只是一步一步跟着指令走，最后成功了也不知道怎么用，今天又重新学习总结了一变，终于把博客搭建到上传文章，更改博客主题的过程弄明白了，所以做此记录，一方面梳理一下思路，另一方面也可以提供给别人参考，如果有错误，欢迎指正！
@@ -192,7 +192,121 @@ Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署�
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">一.环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">二.测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">三.关联GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">四.更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">五.发布文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">Hexo常用命令与快捷命令</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">一.环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">1.安装node</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">2.安装git    用来将本地Hexo内容提交到Github上。
+3.安装Hexo   执行以下指令安装Hexo
+sudo npm install -g hexo-cli   
+输入管理员密码（Mac登录密码）即开始安装 (sudo:linux系统管理指令 -g:全局安装)
+   创建一个目录，用于存放博客内容，通过终端进入创建的目录，初始化站点：
+hexo init blog     
+   初始化站点之后，系统会提示执行npm install以完成所有配置
+npm install
+上述操作完成后，即完成了Hexo的安装和初始化，接下来进行测试
+二.测试
+
+在上述配置完成后，打开终端，输入以下指令在本地服务器测试
+hexo server  
+输入http://localhost:4000/ 即可在本地预览如下：
+以上是进行本地设置，都成功之后，我们将关联GitHub
+三.关联GitHub
+
+博客要发布到Github Pages上，供外网访问，当然你也可以部署到其他服务器上，Github Pages服务的使用步骤：
+1.登陆你的github，新建仓库，仓库名为用户名.github.io（这是固定写法），比如我的仓库为fangzhongqin.github.io
+新建的存放博客的文件夹(blog)目录结构如下：
+
+source：博客资源文件夹
+source/_drafts：草稿文件夹
+source/_posts：文章文件夹
+themes：存放主题的文件夹
+themes/landscape：默认的主题
+_config.yml：全局配置文件
+
+2.在blog文件夹下进入终端，用编辑器打开_config.yml，打开后翻倒最后，修改配置文件改成如下的样子：
+注意：在配置所有的_config.yml文件时（包括theme中的），在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错，切记 切记
+3.在blog文件目录下执行生成静态页面，命令如下：
+hexo generate    或 hexo g
+4.执行配置命令：
+npm install hero-deployer-git —save
+$hexo deploy  或者 ：hexo d
+以上命令成功后，在浏览器中输入网址：http://fangzhongqin.github.io(你的需要改为自己的用户名）能看到和http://localhost:4000一样的页面
+以上的步骤就帮助我们成功搭建了一个个人博客，下面我将介绍如何进行博客主题的更换以及如何发布文章
+四.更换主题
+
+要修改主题，只需要将主题文件clone到themes目录下，并且修改_config.yml配置即可。
+进入到blog的themes目录，打开终端，执行以下指令：
+git clone http://https://github.com/forsigner/fexo.git(主题可以自己选择）
+然后把_config.yml中theme的名称更改为fexo,接着从blog目录进入终端，执行如下命令
+hexo clean && hexo g && hexo d
+至于更改theme内容，比如名称，描述，头像等去修改blog/_config.yml文件和blog/themes/fexo/_config.yml文件中对应的属性名称即可，不要忘记冒号:后加空格。
+五.发布文章
+
+blog目录下进入终端，，执行如下命令新建文章：
+hexo new “postName”
+新生成的文章名为postName.md被保存在目录/blog/source/_posts下。初始样式如下，你可以使用编辑器编辑文章。
+编辑完成之后，在blog目录下进入终端，执行如下命令，发布文章：
+Hexo generate   //生成静态页面
+安装hexo-deployer-git工具，输入指令
+npm install hexo-deployer-git —save
+Hexo deploy      //将文章部署到GitHub
+通过以上所有的步骤，我们就成功搭建了在mac环境下基于GitHub和Hexo的个人博客。
+Hexo常用命令与快捷命令hexo new “postName” //新建文章  hexo new page “pageName” //新建页面  hexo generate //生成静态页面至public目录  hexo server //开启预览访问端口（默认端口4000，ctrl+c关闭server）  hexo deploy //将.deploy目录部署到服务器  hexo n == hexo new  hexo g == hexo generate  hexo s == hexo server  hexo d == hexo deploy
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">    用来将本地Hexo内容提交到Github上。
+3.安装Hexo   执行以下指令安装Hexo
+sudo npm install -g hexo-cli   
+输入管理员密码（Mac登录密码）即开始安装 (sudo:linux系统管理指令 -g:全局安装)
+   创建一个目录，用于存放博客内容，通过终端进入创建的目录，初始化站点：
+hexo init blog     
+   初始化站点之后，系统会提示执行npm install以完成所有配置
+npm install
+上述操作完成后，即完成了Hexo的安装和初始化，接下来进行测试
+二.测试
+
+在上述配置完成后，打开终端，输入以下指令在本地服务器测试
+hexo server  
+输入http://localhost:4000/ 即可在本地预览如下：
+以上是进行本地设置，都成功之后，我们将关联GitHub
+三.关联GitHub
+
+博客要发布到Github Pages上，供外网访问，当然你也可以部署到其他服务器上，Github Pages服务的使用步骤：
+1.登陆你的github，新建仓库，仓库名为用户名.github.io（这是固定写法），比如我的仓库为fangzhongqin.github.io
+新建的存放博客的文件夹(blog)目录结构如下：
+
+source：博客资源文件夹
+source/_drafts：草稿文件夹
+source/_posts：文章文件夹
+themes：存放主题的文件夹
+themes/landscape：默认的主题
+_config.yml：全局配置文件
+
+2.在blog文件夹下进入终端，用编辑器打开_config.yml，打开后翻倒最后，修改配置文件改成如下的样子：
+注意：在配置所有的_config.yml文件时（包括theme中的），在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错，切记 切记
+3.在blog文件目录下执行生成静态页面，命令如下：
+hexo generate    或 hexo g
+4.执行配置命令：
+npm install hero-deployer-git —save
+$hexo deploy  或者 ：hexo d
+以上命令成功后，在浏览器中输入网址：http://fangzhongqin.github.io(你的需要改为自己的用户名）能看到和http://localhost:4000一样的页面
+以上的步骤就帮助我们成功搭建了一个个人博客，下面我将介绍如何进行博客主题的更换以及如何发布文章
+四.更换主题
+
+要修改主题，只需要将主题文件clone到themes目录下，并且修改_config.yml配置即可。
+进入到blog的themes目录，打开终端，执行以下指令：
+git clone http://https://github.com/forsigner/fexo.git(主题可以自己选择）
+然后把_config.yml中theme的名称更改为fexo,接着从blog目录进入终端，执行如下命令
+hexo clean && hexo g && hexo d
+至于更改theme内容，比如名称，描述，头像等去修改blog/_config.yml文件和blog/themes/fexo/_config.yml文件中对应的属性名称即可，不要忘记冒号:后加空格。
+五.发布文章
+
+blog目录下进入终端，，执行如下命令新建文章：
+hexo new “postName”
+新生成的文章名为postName.md被保存在目录/blog/source/_posts下。初始样式如下，你可以使用编辑器编辑文章。
+编辑完成之后，在blog目录下进入终端，执行如下命令，发布文章：
+Hexo generate   //生成静态页面
+安装hexo-deployer-git工具，输入指令
+npm install hexo-deployer-git —save
+Hexo deploy      //将文章部署到GitHub
+通过以上所有的步骤，我们就成功搭建了在mac环境下基于GitHub和Hexo的个人博客。
+Hexo常用命令与快捷命令hexo new “postName” //新建文章  hexo new page “pageName” //新建页面  hexo generate //生成静态页面至public目录  hexo server //开启预览访问端口（默认端口4000，ctrl+c关闭server）  hexo deploy //将.deploy目录部署到服务器  hexo n == hexo new  hexo g == hexo generate  hexo s == hexo server  hexo d == hexo deploy
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">3.安装Hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">二.测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">三.关联GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">四.更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">五.发布文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">Hexo常用命令与快捷命令</span></a></li></ol></li></ol></li></ol>
   </div>
 
 
@@ -248,9 +362,9 @@ Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署�
 <p>我主要从以下5个步骤来进行说明：</p>
 <h2>一.环境配置</h2>
 
-<p>1.安装node<br>    用来生成静态页面。可以到Node.js官网下载</p>
-<p>2.安装git<br>    用来将本地Hexo内容提交到Github上。</p>
-<p>2.安装Hexo<br>   执行以下指令安装Hexo</p>
+<p></p><h3>1.安装node</h3><br>    用来生成静态页面。可以到Node.js官网下载<p></p>
+<p></p><h3>2.安装git<h3><br>    用来将本地Hexo内容提交到Github上。<p></p>
+<p></p><h3>3.安装Hexo</h3><br>   执行以下指令安装Hexo<p></p>
 <p><mark>sudo npm install -g hexo-cli   </mark></p>
 <p>输入管理员密码（Mac登录密码）即开始安装 (sudo:linux系统管理指令 -g:全局安装)</p>
 <p>   创建一个目录，用于存放博客内容，通过终端进入创建的目录，初始化站点：</p>
@@ -306,7 +420,7 @@ Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署�
 <p><mark>Hexo deploy      //将文章部署到GitHub</mark></p>
 <p>通过以上所有的步骤，我们就成功搭建了在mac环境下基于GitHub和Hexo的个人博客。</p>
 <p></p><h4>Hexo常用命令与快捷命令</h4><br><mark>hexo new “postName” //新建文章<br>  hexo new page “pageName” //新建页面<br>  hexo generate //生成静态页面至public目录<br>  hexo server //开启预览访问端口（默认端口4000，ctrl+c关闭server）<br>  hexo deploy //将.deploy目录部署到服务器<br>  hexo n == hexo new<br>  hexo g == hexo generate<br>  hexo s == hexo server<br>  hexo d == hexo deploy</mark><p></p>
-
+</h3></h3>
     
   </div>
 </article>

@@ -1,0 +1,718 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="很久以前就看了别人的博客就搭建了自己的基于Hexo的个人博客，但是那个时候只是一步一步跟着指令走，最后成功了也不知道怎么用，今天又重新学习总结了一变，终于把博客搭建到上传文章，更改博客主题的过程弄明白了，所以做此记录，一方面梳理一下思路，另一方面也可以提供给别人参考，如果有错误，欢迎指正！
+
+
+Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署到各个托管平台完成发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac环境下搭建基于Hexo和GitHub的个人博客">
+<meta property="og:url" content="http://yoursite.com/2017/03/16/Mac环境下搭建基于Hexo和GitHub的个人博客/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="很久以前就看了别人的博客就搭建了自己的基于Hexo的个人博客，但是那个时候只是一步一步跟着指令走，最后成功了也不知道怎么用，今天又重新学习总结了一变，终于把博客搭建到上传文章，更改博客主题的过程弄明白了，所以做此记录，一方面梳理一下思路，另一方面也可以提供给别人参考，如果有错误，欢迎指正！
+
+
+Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署到各个托管平台完成发">
+<meta property="og:image" content="http://omymprfp2.bkt.clouddn.com/1.png">
+<meta property="og:image" content="http://omymprfp2.bkt.clouddn.com/2.png">
+<meta property="og:image" content="http://omymprfp2.bkt.clouddn.com/3.png">
+<meta property="og:image" content="http://omymprfp2.bkt.clouddn.com/4.png">
+<meta property="og:image" content="http://omymprfp2.bkt.clouddn.com/5.png">
+<meta property="og:image" content="http://omymprfp2.bkt.clouddn.com/6.png">
+<meta property="og:updated_time" content="2017-03-17T13:02:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac环境下搭建基于Hexo和GitHub的个人博客">
+<meta name="twitter:description" content="很久以前就看了别人的博客就搭建了自己的基于Hexo的个人博客，但是那个时候只是一步一步跟着指令走，最后成功了也不知道怎么用，今天又重新学习总结了一变，终于把博客搭建到上传文章，更改博客主题的过程弄明白了，所以做此记录，一方面梳理一下思路，另一方面也可以提供给别人参考，如果有错误，欢迎指正！
+
+
+Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署到各个托管平台完成发">
+<meta name="twitter:image" content="http://omymprfp2.bkt.clouddn.com/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/16/Mac环境下搭建基于Hexo和GitHub的个人博客/"/>
+
+
+
+
+
+  <title> Mac环境下搭建基于Hexo和GitHub的个人博客 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/Mac环境下搭建基于Hexo和GitHub的个人博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhongqin Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mac环境下搭建基于Hexo和GitHub的个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T17:01:09+08:00">
+                2017-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>   很久以前就看了别人的博客就搭建了自己的基于Hexo的个人博客，但是那个时候只是一步一步跟着指令走，最后成功了也不知道怎么用，今天又重新学习总结了一变，终于把博客搭建到上传文章，更改博客主题的过程弄明白了，所以做此记录，一方面梳理一下思路，另一方面也可以提供给别人参考，如果有错误，欢迎指正！</p>
+
+<ul>
+<li>Hexo是基于Node.js的博客平台，Hexo是生成静态的Html文件，部署到各个托管平台完成发布，其官网地址：<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">https://hexo.io/zh-cn/</a></li>
+</ul>
+<p>我主要从以下5个步骤来进行说明：</p>
+<h2>一.环境配置</h2>
+
+<p></p><h3><b>1.安装node</b></h3><br>    用来生成静态页面。可以到Node.js官网下载<p></p>
+<p></p><h3><b>2.安装git</b></h3><br>    用来将本地Hexo内容提交到Github上。<p></p>
+<p></p><h3><b>3.安装Hexo</b></h3><br>   执行以下指令安装Hexo<p></p>
+<p><mark>sudo npm install -g hexo-cli   </mark></p>
+<p>输入管理员密码（Mac登录密码）即开始安装 (sudo:linux系统管理指令 -g:全局安装)</p>
+<p>   创建一个目录，用于存放博客内容，通过终端进入创建的目录，初始化站点：</p>
+<p><mark>hexo init blog </mark>    </p>
+<p>   初始化站点之后，系统会提示执行npm install以完成所有配置</p>
+<p><mark>npm install</mark></p>
+<p>上述操作完成后，即完成了Hexo的安装和初始化，接下来进行测试</p>
+<h2>二.测试</h2>
+
+<p>在上述配置完成后，打开终端，输入以下指令在本地服务器测试</p>
+<p><mark>hexo server </mark><br><img src="http://omymprfp2.bkt.clouddn.com/1.png"></p>
+<p>输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 即可在本地预览如下：<br><img src="http://omymprfp2.bkt.clouddn.com/2.png"></p>
+<p>以上是进行本地设置，都成功之后，我们将关联GitHub</p>
+<h2>三.关联GitHub</h2>
+
+<p>博客要发布到Github Pages上，供外网访问，当然你也可以部署到其他服务器上，Github Pages服务的使用步骤：</p>
+<p>1.登陆你的github，新建仓库，仓库名为<span style="background: red;">用户名.github.io（这是固定写法）</span>，比如我的仓库为fangzhongqin.github.io<br><img src="http://omymprfp2.bkt.clouddn.com/3.png"><br>新建的存放博客的文件夹(blog)目录结构如下：</p>
+<div style="background-color: #CDC5BF;border-radius: 5px;box-shadow: 5px 5px;"><br><em> source：博客资源文件夹
+</em> source/_drafts：草稿文件夹<br><em> source/_posts：文章文件夹
+</em> themes：存放主题的文件夹<br><em> themes/landscape：默认的主题
+</em> _config.yml：全局配置文件<br></div><br><img src="http://omymprfp2.bkt.clouddn.com/4.png"><br><br>2.在blog文件夹下进入终端，用编辑器打开_config.yml，打开后翻倒最后，修改配置文件改成如下的样子：<br><img src="http://omymprfp2.bkt.clouddn.com/5.png"><br><span style="background-color:red;">注意：在配置所有的_config.yml文件时（包括theme中的），在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错，切记 切记</span><br><br>3.在blog文件目录下执行生成静态页面，命令如下：<br><br><mark>hexo generate    或 hexo g</mark><br><br>4.执行配置命令：<br><br><mark>npm install hero-deployer-git —save</mark><br><br><mark>$hexo deploy  或者 ：hexo d</mark><br><br>以上命令成功后，在浏览器中输入网址：<a href="http://fangzhongqin.github.io" target="_blank" rel="external">http://fangzhongqin.github.io</a><span style="background-color: red;">(你的需要改为自己的用户名）</span>,能看到和<a href="http://localhost:4000一样的页面" target="_blank" rel="external">http://localhost:4000一样的页面</a><br><br>以上的步骤就帮助我们成功搭建了一个个人博客，下面我将介绍如何进行博客主题的更换以及如何发布文章<br><br><h2>四.更换主题</h2><br><br>要修改主题，只需要将主题文件clone到themes目录下，并且修改_config.yml配置即可。<br><br>进入到blog的themes目录，打开终端，执行以下指令：<br><br><mark>git clone <a href="http://https://github.com/forsigner/fexo.git" target="_blank" rel="external">http://https://github.com/forsigner/fexo.git</a></mark>(主题可以自己选择）<br><br>然后把_config.yml中theme的名称更改为fexo,接着从blog目录进入终端，执行如下命令<br><br><mark>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</mark><br><br>至于更改theme内容，比如名称，描述，头像等去修改blog/_config.yml文件和blog/themes/fexo/_config.yml文件中对应的属性名称即可，<br>不要忘记冒号:后加空格。<br><br><h2>五.发布文章</h2><br><br>blog目录下进入终端，，执行如下命令新建文章：<br><br><mark>hexo new “postName”</mark><br><br>新生成的文章名为postName.md被保存在目录/blog/source/_posts下。初始样式如下，你可以使用编辑器编辑文章。<br><img src="http://omymprfp2.bkt.clouddn.com/6.png"><br><br>编辑完成之后，在blog目录下进入终端，执行如下命令，发布文章：<br><br><mark>Hexo generate   //生成静态页面</mark><br><br>安装hexo-deployer-git工具，输入指令:<br><br><mark>npm install hexo-deployer-git —save</mark><br><br><mark>Hexo deploy      //将文章部署到GitHub</mark><br><br>通过以上所有的步骤，我们就成功搭建了在mac环境下基于GitHub和Hexo的个人博客。<br><br><h4>Hexo常用命令与快捷命令</h4><br><div style="background-color: #CDC5BF;border-radius: 5px;box-shadow: 1px 1px;"><br>  hexo new “postName” //新建文章<br>  hexo new page “pageName” //新建页面<br>  hexo generate //生成静态页面至public目录<br>  hexo server //开启预览访问端口（默认端口4000，ctrl+c关闭server）<br>  hexo deploy //将.deploy目录部署到服务器<br>  hexo n == hexo new<br>  hexo g == hexo generate<br>  hexo s == hexo server<br>  hexo d == hexo deploy</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/16/js知识点/" rel="next" title="js知识点">
+                <i class="fa fa-chevron-left"></i> js知识点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/22/javascript-事件机制（事件绑定与事件委托)/" rel="prev" title="javascript 事件机制（事件绑定与事件委托">
+                javascript 事件机制（事件绑定与事件委托 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Zhongqin Fang" />
+          <p class="site-author-name" itemprop="name">Zhongqin Fang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一.环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">1.安装node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">2.安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">3.安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">二.测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">三.关联GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">四.更换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">五.发布文章</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.0.1.</span> <span class="nav-text">Hexo常用命令与快捷命令</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhongqin Fang</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

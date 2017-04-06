@@ -88,21 +88,18 @@
 
 
 <meta name="description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;今天继续更新三道js相关的面试题
-一.JavaScript有几种类型的值？你能画一下他们的内存图吗？javascript的数据类型主要有原始数据类型和引用数据类型。原始数据类型有：string,number,boolean,null和undefined。存储在栈中引用数据类型为：对象,数组和函数。存储在堆中
-两种类型的区别是：存储位置不同；原始数据类">
+一.JavaScript有几种类型的值？你能画一下他们的内存图吗？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试题-js（二）">
 <meta property="og:url" content="http://yoursite.com/2017/04/06/前端面试题-js（二）/index.html">
 <meta property="og:site_name" content="方中勤的个人博客">
 <meta property="og:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;今天继续更新三道js相关的面试题
-一.JavaScript有几种类型的值？你能画一下他们的内存图吗？javascript的数据类型主要有原始数据类型和引用数据类型。原始数据类型有：string,number,boolean,null和undefined。存储在栈中引用数据类型为：对象,数组和函数。存储在堆中
-两种类型的区别是：存储位置不同；原始数据类">
-<meta property="og:updated_time" content="2017-04-06T08:57:37.000Z">
+一.JavaScript有几种类型的值？你能画一下他们的内存图吗？">
+<meta property="og:updated_time" content="2017-04-06T09:01:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试题-js（二）">
 <meta name="twitter:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;今天继续更新三道js相关的面试题
-一.JavaScript有几种类型的值？你能画一下他们的内存图吗？javascript的数据类型主要有原始数据类型和引用数据类型。原始数据类型有：string,number,boolean,null和undefined。存储在栈中引用数据类型为：对象,数组和函数。存储在堆中
-两种类型的区别是：存储位置不同；原始数据类">
+一.JavaScript有几种类型的值？你能画一下他们的内存图吗？">
 
 
 
@@ -359,14 +356,14 @@
 
       
         <p>&#160;&#160;&#160;&#160;今天继续更新三道js相关的面试题</p>
-<p></p><h2>一.JavaScript有几种类型的值？你能画一下他们的内存图吗？</h2><br>javascript的数据类型主要有原始数据类型和引用数据类型。<br>原始数据类型有：string,number,boolean,null和undefined。<b>存储在栈中</b><br>引用数据类型为：对象,数组和函数。<b>存储在堆中</b><p></p>
+<p></p><h2>一.JavaScript有几种类型的值？你能画一下他们的内存图吗？</h2><br><a id="more"></a><br>javascript的数据类型主要有原始数据类型和引用数据类型。<br>原始数据类型有：string,number,boolean,null和undefined。<b>存储在栈中</b><br>引用数据类型为：对象,数组和函数。<b>存储在堆中</b><p></p>
 <p>两种类型的区别是：存储位置不同；<br>原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；<br>引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定。如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。</p>
 <p>内存图如下：</p>
 <image src="http://omymprfp2.bkt.clouddn.com/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%86%85%E5%AD%98%E5%9B%BE.png">
 
-<p></p><h2>null和undefined的区别</h2><br>null表示没有对象，即该处不应该有值。<br>undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。有以下几种情况：<br>&#160;&#160;&#160;&#160;（1）变量被声明了，但没有赋值时，就等于undefined。<br>&#160;&#160;&#160;&#160;（2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。<br>&#160;&#160;&#160;&#160;（3）对象没有赋值的属性，该属性的值为undefined。<br>&#160;&#160;&#160;&#160;（4）函数没有返回值时，默认返回undefined。<br>例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i;</div><div class="line">i <span class="comment">// undefined</span></div><div class="line">functionf(x)&#123;<span class="built_in">console</span>.log(x)&#125;f() <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span>  o =newObject();</div><div class="line">o.p <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> x =f();</div><div class="line">x <span class="comment">// undefined</span></div></pre></td></tr></table></figure><p></p>
+<p></p><h2>二.null和undefined的区别</h2><br>null表示没有对象，即该处不应该有值。<br>undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。有以下几种情况：<br>&#160;&#160;&#160;&#160;（1）变量被声明了，但没有赋值时，就等于undefined。<br>&#160;&#160;&#160;&#160;（2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。<br>&#160;&#160;&#160;&#160;（3）对象没有赋值的属性，该属性的值为undefined。<br>&#160;&#160;&#160;&#160;（4）函数没有返回值时，默认返回undefined。<br>例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i;</div><div class="line">i <span class="comment">// undefined</span></div><div class="line">functionf(x)&#123;<span class="built_in">console</span>.log(x)&#125;f() <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span>  o =newObject();</div><div class="line">o.p <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> x =f();</div><div class="line">x <span class="comment">// undefined</span></div></pre></td></tr></table></figure><p></p>
 <p>注意：<br>&#160;&#160;&#160;&#160;一、在验证null时，一定要使用　=== ，因为 == 无法分别 null 和　undefined<br>    null == undefined // true<br>    null === undefined // false<br>&#160;&#160;&#160;&#160;二、和number相加时，两者结果不同<br>    1+undefined==NaN;<br>    1+null==1;<br>因为undefined转换为数字类型的时候是NaN，而null转换为数字类型的时候为0。</p>
-<p></p><h2>三.如何实现数组的随机排序？</h2><br>输入 array,输出mixedarray<br>方法一：将Math.random()渠道array中的一个数 拿出来，放入mixedarray,直到array为空<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mixedArray</span>(<span class="params">array</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">var</span> mixedarray = [];</div><div class="line">    <span class="keyword">var</span> rand;</div><div class="line">    <span class="keyword">while</span>(array.length&gt;<span class="number">0</span>)&#123;</div><div class="line">        rand = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*array.length);</div><div class="line">        [].push.apply(mixedarray,array.splice(rand,<span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> mixedarray;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p></p><h2>三.如何实现数组的随机排序？</h2><br>方法一：输入 array,输出mixedarray,将Math.random()渠道array中的一个数 拿出来，放入mixedarray,直到array为空<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mixedArray</span>(<span class="params">array</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">var</span> mixedarray = [];</div><div class="line">    <span class="keyword">var</span> rand;</div><div class="line">    <span class="keyword">while</span>(array.length&gt;<span class="number">0</span>)&#123;</div><div class="line">        rand = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*array.length);</div><div class="line">        [].push.apply(mixedarray,array.splice(rand,<span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> mixedarray;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
 <p>方法二 sort<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</div><div class="line">       arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">           <span class="keyword">return</span> <span class="built_in">Math</span>.random() - <span class="number">0.5</span>;</div><div class="line">       &#125;)</div></pre></td></tr></table></figure></p>
 </image>
       
@@ -537,7 +534,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一.JavaScript有几种类型的值？你能画一下他们的内存图吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">null和undefined的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">三.如何实现数组的随机排序？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">一.JavaScript有几种类型的值？你能画一下他们的内存图吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">二.null和undefined的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">三.如何实现数组的随机排序？</span></a></li></ol></div>
             
 
           </div>

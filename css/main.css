@@ -1794,7 +1794,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9065e8;
+  background: #ff73ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2585,7 +2585,7 @@ embed {
 }
 @media (max-width: 767px) {
   .menu .menu-item br {
-    display: none;
+    display: block;
   }
 }
 @media (max-width: 767px) {
@@ -2597,7 +2597,7 @@ embed {
   margin-right: 0;
 }
 .site-search form {
-  display: none;
+  display: block;
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;

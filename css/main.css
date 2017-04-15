@@ -1658,9 +1658,12 @@ img:hover {
 }
 .site-description {
   margin-top: 5px;
-  text-align: center;
-  font-size: 14px;
-  color: #999;
+  font-size: 16px;
+  color: #f5f5f5;
+/*
+  font-size: $site-description-font-size;
+  color: $site-description-color;
+  */
 }
 @-moz-keyframes play {
   0% {
@@ -1794,7 +1797,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5ea3f1;
+  background: #94ff8f;
 }
 .links-of-blogroll {
   font-size: 13px;

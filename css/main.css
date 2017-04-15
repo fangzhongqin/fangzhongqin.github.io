@@ -940,7 +940,6 @@ pre .javascript .function {
   opacity: 1;
   color: #fff;
   cursor: pointer;
-  text-align: center;
   -webkit-transform: translateZ(0);
   transition-property: bottom;
   transition-duration: 0.2s;
@@ -1794,7 +1793,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f612c4;
+  background: #ff08c2;
 }
 .links-of-blogroll {
   font-size: 13px;

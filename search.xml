@@ -259,16 +259,16 @@
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
-      <content type="html"><![CDATA[<p>javascript html css</p>
+      <title><![CDATA[categories]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"><![CDATA[<p>目录</p>
 ]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"><![CDATA[<p>目录</p>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[<p>javascript html css</p>
 ]]></content>
     </entry>
     

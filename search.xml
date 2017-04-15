@@ -250,4 +250,20 @@
     
   
   
+    
+    <entry>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[<p>关于我</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[<p>javascript html css</p>
+]]></content>
+    </entry>
+    
+  
 </search>
